@@ -77,9 +77,13 @@ export const cartSlice = createSlice({
                 console.log('Nothing Found');
                 
             }
+        },
+        addCourierAmount: (state, action)=>{
+            const {amount} = action.payload
+            state.totalAmount += amount
         }
     }
 })
 
-export const {addToCart, removeFromCart, decreaseQuantity, increaseQuantity} = cartSlice.actions
+export const {addToCart, removeFromCart, decreaseQuantity, increaseQuantity, addCourierAmount} = cartSlice.actions
 export default cartSlice.reducer
